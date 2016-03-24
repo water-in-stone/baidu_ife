@@ -1,0 +1,64 @@
+/**
+ * 思路，float实现靠左和靠右
+ * 居中依靠元素的间距来设置
+ */
+.container{
+    background-color: #eee;
+    border: 1px solid #999;
+    padding:20px;
+    overflow: auto; /*保证父元素的高度始终为子元素中最高的高度*/
+    min-width: 600px; /*使得此布局中的子布局能够并排排列*/
+}
+
+/**
+ * DOM树是从上到下渲染的，所以在布局中
+ * 应该先让右元素浮动到右边，再设置中间元素，因为左右子元素为浮动，所以他们的位置相当于是
+ * 浮在了中间元素之上的，这边只不过是把中间元素用margin-left和margin-right的方式留在了中间，
+ */
+.left{
+    float: left;
+    border: 1px solid #999;
+    padding:20px;
+    background-color: #fff;
+    width: 200px;
+    text-align: center;
+}
+
+.teamLogo{
+    display: inline-block;
+    float: left;
+}
+
+.name{
+    display: inline;
+    font-size: 18x;
+}
+
+.right{
+    float: right;
+    border: 1px solid #999;
+    background: #fff;
+    width: 120px;
+}
+
+.logo{
+    display: block;
+    margin: 20px;
+    
+}
+
+.mid{ 
+    position: relative;
+    margin-left: 250px;
+    margin-right: 160px;
+    background-color: #fff;
+    padding: 20px;
+}
+
+p{
+    text-indent: 2em;   
+}
+
+h2{
+    margin: 0;
+}
