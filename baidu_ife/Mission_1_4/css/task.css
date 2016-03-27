@@ -1,0 +1,35 @@
+.box-set {
+    background: #ccc;
+    width: 400px;
+    height: 200px;
+    position: absolute;
+    /* 用绝对布局来实现居中定位*/
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /*这里的50%指的是元素自身的width和height*/
+}
+
+.circle-1 {
+    background-color: #fc0;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    --moz-border-radius: 50px;
+    --webkit-border-radius: 50px;
+    border-radius: 0 0 50px 0;
+}
+
+.circle-2 {
+    background-color: #fc0;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    --moz-border-radius: 50px;
+    --webkit-border-radius: 50px;
+    border-radius: 50px 0 0 0;
+}
