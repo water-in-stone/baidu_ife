@@ -1,8 +1,18 @@
+/*.box-set {
+    background: #ccc;
+    position: absolute;
+     用绝对布局来实现居中定位,且不指定宽度
+    left: 25%;
+    top: 25%;
+    right: 25%;
+    bottom: 25%;
+}*/
+
 .box-set {
     background: #ccc;
+    position: absolute;
     width: 400px;
     height: 200px;
-    position: absolute;
     /* 用绝对布局来实现居中定位*/
     left: 50%;
     top: 50%;
