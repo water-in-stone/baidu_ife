@@ -1,0 +1,172 @@
+body {
+    width: 100%;
+    font-family: "Microsoft Yahei";
+    font-size: 14px;
+    margin: 0px;
+    /*让body占满屏幕*/
+    border: 0px;
+    background: #DEDEDE;
+}
+
+.title {
+    background-color: #505253;
+    padding: 20px;
+    position: relative;
+    height: 40px;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+footer {
+    background-color: #505253;
+    padding-top: 20px;
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.nav {
+    position: absolute;
+    top: 50%;
+    padding: 20px;
+    right: 0;
+    margin: 0;
+    transform: translateY(-50%);
+}
+
+.nav li {
+    display: inline;
+    margin-left: 20px;
+    color: white;
+}
+
+.container {
+    position: relative;
+}
+
+#article_4 {
+    border-left: 3px #ccc solid;
+    padding-left: 10px;
+    text-align: left;
+    height: 15px;
+}
+
+aside {
+    width: 300px;
+    background: #fff;
+    float: right;
+    padding: 20px;
+    margin-top: 40px;
+    margin-right: 20px;
+    box-shadow: 2px 2px 2px #848484;
+}
+
+#content {
+    margin-right: 30px;
+    left: 0;
+}
+
+form>div {
+    margin: 11px;
+}
+
+.input-class {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.demand {
+    margin-left: 41%;
+    font-family: "SimHei";
+    color: #9999CC;
+}
+
+.input-message {
+    width: 30%;
+    /*显示父元素宽度的30%即可*/
+    display: inline-block;
+    margin-right: 25px;
+    text-align: right;
+    height: 20px;
+    vertical-align: top;
+}
+
+.align-right {
+    margin-right: 15px;
+}
+
+textarea {
+    height: 150px;
+}
+
+input[type='submit'] {
+    background: #03F;
+    text-align: center;
+    width: 100%;
+    height: 35px;
+    border-radius: 10px;
+    border: 1px solid #FFF;
+    cursor: pointer;
+    color: #FFF;
+}
+
+.article {
+    min-width: 300px;
+    box-shadow: 2px 2px 2px #848484;
+    background: #fff;
+    padding: 20px;
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 450px;
+}
+
+.color-grey {
+    color: grey;
+}
+
+p {
+    text-indent: 2em;
+}
+
+ul {
+    list-style-type: none;
+}
+
+figure {
+    text-align: center;
+    display: inline-block;
+    height: 300px;
+    width: 200px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #99c;
+}
+
+figcaption {
+    margin-bottom: 10px;
+}
+
+.font-bold{
+    font-weight: bold;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid #000000;
+    width: 100%;
+}
+
+thead,tbody td{
+    border:1px solid black;
+}
+
+thead{
+    background-color: #000003;
+    color: #fff;
+}
+
+tfoot td{
+    background-color: #666666;
+}
