@@ -36,35 +36,51 @@ function getData() {
     var arrList = document.getElementById("source").getElementsByTagName("li");
     var data = [];
     for (var i = 0; i < arrList.length; i++) {
-      var location = arrList[i].innerText.substr(0,2);
+
+      //很优雅，正则表达式也可以匹配中文的
+      var city = arrList[i].innerText.match(/(.*?)空气/)[1];
+      var num = arrList[i].getElementsByTagName('b')[0].innerText;
+
+      data.push([city, num]);
+
+     /* var location = arrList[i].innerText.substr(0, 2);
       //从倒数第二个字符开始向后选择
-      var value = arrList[i].innerText.substr(-2,2);
-      data.push([location,value]);
+      var value = arrList[i].innerText.substr(-2, 2);
+
+      data.push([location, value]);*/
     }
     return data;
 }
 
 /**
- * sortAqiData,使用快速排序
+ * sortAqiData,使用快速排序/数组自带的sort方法
  * 按空气质量对data进行从小到大的排序
  * 返回一个排序后的数组
  */
 function sortAqiData(data) {
-  if (data.length <= 1) {
-    return data;
-  }
-  var mid = Math.floor(data.length / 2);
-  var midElement = data.splice(mid, 1);
-  var left = [];
-  var right = [];
-  for (var i = 0; i < data.length; i++) {
-    if (data[i][1] < midElement[0][1]) {
-      left.push(data[i]);
-    } else {
-      right.push(data[i]);
+
+    /*if (data.length <= 1) {
+      return data;
     }
-  }
-  return sortAqiData(right).concat(midElement,sortAqiData(left));
+    var mid = Math.floor(data.length / 2);
+    var midElement = data.splice(mid, 1);
+    var left = [];
+    var right = [];
+    for (var i = 0; i < data.length; i++) {
+      if (data[i][1] < midElement[0][1]) {
+        left.push(data[i]);
+      } else {
+        right.push(data[i]);
+      }
+    }
+    return sortAqiData(right).concat(midElement,sortAqiData(left));*/
+
+    //简易版：
+    data.sort(function(a, b) {
+        //调用排序函数，若此函数返回1，则b排在a的前面
+        return b[1] - a[1];
+    });
+    return data;
 }
 
 /**
@@ -73,13 +89,13 @@ function sortAqiData(data) {
  * 格式见ul中的注释的部分
  */
 function render(data) {
-  var result = document.getElementById("resort");
-  var chinese = ["一", "二","三", "四","五", "六","七"];
-  for (var i = 0; i < data.length; i++) {
-    var li = document.createElement("li");
-    li.innerHTML = "第" + chinese[i] + "名" + data[i][0] +　"空气质量：<b>" + data[i][1] + "</b></li>";
-    result.appendChild(li);
-  }
+    var result = document.getElementById("resort");
+    var chinese = ["一", "二", "三", "四", "五", "六", "七"];
+    for (var i = 0; i < data.length; i++) {
+        var li = document.createElement("li");
+        li.innerHTML = "第" + chinese[i] + "名" + data[i][0] + 　"空气质量：<b>" + data[i][1] + "</b></li>";
+        result.appendChild(li);
+    }
 }
 
 function btnHandle() {
@@ -87,12 +103,12 @@ function btnHandle() {
     aqiData = sortAqiData(aqiData);
     render(aqiData);
     //避免多次点击
-    document.getElementById("sort-btn").removeEventListener("click",btnHandle);
+    document.getElementById("sort-btn").removeEventListener("click", btnHandle);
 }
 
 // 给sort-btn绑定一个点击事件，点击时触发btnHandle函数
 function init() {
-  document.getElementById("sort-btn").addEventListener("click",btnHandle);
+    document.getElementById("sort-btn").addEventListener("click", btnHandle);
 }
 
 init();
