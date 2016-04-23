@@ -16,11 +16,11 @@ function addAqiData() {
   var city = document.querySelector("#aqi-city-input").value.trim();
   var quality = document.querySelector("#aqi-value-input").value.trim();
   if (!city.match(/^[A-Za-z\u4E00-\u9FA5]+$/)) {
-    alert("城市名必须为中英文字符！")
+    alert("城市名必须为中英文字符！");
     return;
   }
   if (!quality.match(/^\d+$/)) {
-    alert("空气质量指数必须为整数！")
+    alert("空气质量指数必须为整数！");
     return;
   }
   aqiData[city] = quality;
@@ -35,7 +35,7 @@ function renderAqiList() {
   listArr.push("<tr><td>城市</td><td>空气质量</td><td>操作</td></tr>");
   for (var city in aqiData) {
     //使用自定义属性data-city，便于删除操作，cool！
-    var html = "<tr><td>" + city + "</td><td>" + aqiData[city] + "</td><td><button data-city='" + city + "'>删除</button></td></tr>"
+    var html = "<tr><td>" + city + "</td><td>" + aqiData[city] + "</td><td><button data-city='" + city + "'>删除</button></td></tr>";
     listArr.push(html);
   }
   table.innerHTML = listArr.join("");
@@ -59,13 +59,14 @@ function delBtnHandle(city) {
   renderAqiList();
 }
 
+//暂时不考虑IE
 function init() {
 
   // 在这下面给add-btn绑定一个点击事件，点击时触发addBtnHandle函数
   document.querySelector("#add-btn").addEventListener("click", addBtnHandle);
 
   // 想办法给aqi-table中的所有删除按钮绑定事件，触发delBtnHandle函数
-  // 使用事件捕获机制，确定事件中的冒泡到底是从哪里出来的，nice
+  // 使用事件代理，对整个table注册一个点击事件，然后冒泡阶段中确定事件中到底是从哪里出来的
   document.querySelector("#aqi-table").addEventListener("click", function(event) {
     if (event.target.nodeName.toLowerCase() === "button") {
       //若写成event.target.onclick = delBtnHandle，则只是注册点击事件，必须要再次点击才能
