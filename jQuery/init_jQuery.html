@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="http://img.mukewang.com/down/540812440001e40e00000000.js" type="text/javascript"></script>
+    <!-- <script type="text/javascript" src="../jquery-2.1.1.js"></script> -->
+    <title></title>
+</head>
+
+<body>
+    <button id="test1">jQuery遍历同胞</button>
+    <button id="test2">模拟遍历同胞</button>
+    <ul class="level-1">
+        <li class="item-i">I</li>
+        <li class="item-ii">II
+            <ul class="level-2">
+                <li class="item-a">A</li>
+                <li class="item-b">B
+                    <ul class="level-3">
+                        <li class="item-1">1</li>
+                        <li class="item-2">2</li>
+                        <li class="item-3">3</li>
+                    </ul>
+                </li>
+                <li class="item-c">C</li>
+            </ul>
+        </li>
+        <li class="item-iii">III</li>
+    </ul>
+    <script type="text/javascript">
+    var aQuery = function(selector, context) {
+           return  new aQuery.prototype.init();
+    }
+    aQuery.prototype = {
+        init: function() {
+            return this;
+        },
+        name: function() {
+            return this.age
+        },
+        age: 20
+    }
+    //init方法返回aQuery的实例，然后在其原型中把name方法和ages属性加入
+    aQuery.prototype.init.prototype = aQuery.prototype;
+
+    console.log(aQuery().name()) //20
+    </script>
+</body>
+
+</html>

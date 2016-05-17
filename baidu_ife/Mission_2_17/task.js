@@ -14,10 +14,13 @@ var aqiSourceData = {
  */
 function addEventHandler(ele, event, handler) {
   if (ele.addEventListener) {
+    //非IE浏览器之Chrome/Firefox
     ele.addEventListener(event,handler,false);
   } else if(ele.attachEvent){
+    //IE浏览器
     ele.attachEvent("on" + event, handler);
   } else {
+    //DOM 0 级下的事件处理，适配其余浏览器
     ele["on" + event] = handler;
   }
 }

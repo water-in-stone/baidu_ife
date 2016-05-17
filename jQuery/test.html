@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Learn jQuery</title>
+</head>
+
+<body>
+    <h1>Learn jQuery</h1>
+    <div id="test"></div>
+    <ul class="first">
+        <li class="foo">list item 1</li>
+        <li>list item 2</li>
+        <li class="bar">list item 3</li>
+    </ul>
+    <script src="./jquery_2.2.1.js"></script>
+    <script type="text/javascript">
+    var $$ = ajQuery = function(selector) {
+        return new ajQuery.fn.init(selector);
+    }
+
+    ajQuery.fn = ajQuery.prototype = {
+        name: 'aaron',
+        init: function(selector) {
+            this.selector = selector;
+            return this;
+        },
+        constructor: ajQuery
+    }
+
+    ajQuery.fn.init.prototype = ajQuery.fn;
+
+    ajQuery.fn.setName = function(myName) {
+        this.myName = myName
+        return this;
+    }
+
+    ajQuery.fn.getName = function() {
+        $("#test").html(this.myName)
+        return this;
+    }
+
+    var a = ajQuery('aaa'); //实例化
+
+    //得到选择器名字
+    //aaa
+    // $("#test").html(a);
+
+    a.setName("Young").getName();
+
+    $("#test2").click(function() {
+        //通过end连贯处理
+        $('ul.first').find('.foo').css('background-color', 'red')
+            .end().find('.bar').css('background-color', 'green');
+    })
+    </script>
+</body>
+
+</html>
