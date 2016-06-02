@@ -1,0 +1,114 @@
+@charset "utf-8";
+//声明变量并使用
+@test_width: 300px;
+@test_height: 300px;
+
+/*------------混合-------------------*/
+
+.box {
+    width: @test_width;
+    height: @test_height;
+    background-color: yellow;
+    //使用了混合,直接把.border的内容插入
+    .border;
+}
+
+.border {
+    border: solid 5px pink;
+}
+
+.test_border {
+    width: @test_width;
+    height: @test_height;
+    background-color: green;
+    .border_radius(); //使用默认radius
+    .border_radius(30px); //指定radius
+}
+
+//带参数的混合
+.border_radius(@radius: 10px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+
+
+/*--------------混合------------------*/
+
+
+/*-------------------匹配模式--------------------*/
+
+.triangle(top, @width: 40px, @color: blue) {
+    border-width: @width;
+    border-color: transparent transparent @color transparent;
+    //dashed 也是用来解决IE中三角形可能存在的边框问题
+    border-style: dashed dashed solid dashed;
+}
+
+.triangle(right, @width: 40px, @color: blue) {
+    border-width: @width;
+    border-color: transparent transparent transparent @color;
+    border-style: dashed dashed dashed solid;
+}
+
+.triangle(bottom, @width: 40px, @color: blue) {
+    border-width: @width;
+    border-color: @color transparent transparent transparent;
+    border-style: solid dashed dashed dashed;
+}
+
+.triangle(left, @width: 40px, @color: blue) {
+    border-width: @width;
+    border-color: transparent @color transparent transparent;
+    border-style: dashed solid dashed dashed;
+}
+
+//对.triangle添加默认参数
+.triangle(@_, @width: 40px, @color: blue) {
+    width: 0px;
+    height: 0px;
+    //解决IE6下的最小高度的问题
+    overflow: hidden;
+}
+
+//使用定义好的triangle
+.fragment {
+    .triangle(right);
+}
+
+
+/*------------------匹配模式--------------------*/
+
+
+/*------------------嵌套--------------------*/
+
+ul {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    li {
+        background-color: pink;
+        padding: 2px;
+        margin-bottom: 3px;
+    }
+    span {
+        float: right;
+        //&代表它的上一层选择器
+        &:hover {
+            color: blue;
+        }
+    }
+}
+
+/*------------------嵌套--------------------*/
+
+/*------------------arguments--------------------*/
+.test_border_02(@w:20px, @c:blue, @s:solid){
+	//arguments代表所有传入的参数
+	border:@arguments;
+}
+
+.test_arguments{
+	.test_border_02();
+}
+/*------------------arguments--------------------*/

@@ -1,0 +1,41 @@
+@charset "utf-8";
+@import "z";
+@import "variables";
+
+.reset();
+
+body{
+	background-color: @body_bgc;
+}
+
+//header
+.header{
+	@h:48px;
+	@border:2px;
+	background-color: #FFF;
+	height: @h;
+	border-top: @border solid @link_color;
+	background-color: #fff;
+
+	&_content{
+		margin-left: auto;
+		margin-right: auto;
+		width: 1240px;
+		.clearfix();
+	}
+
+	.logo{
+		width: 80px;
+		height: 27px;
+		background: url(../img/logo.jpg) left top no-repeat;
+		margin: 8px 30px 13px 0;
+		//浮动
+		float: left;
+		display: inline;
+		a{
+			display: block;
+			height: 100%;
+			text-indent: -99em;
+		}
+	}
+}

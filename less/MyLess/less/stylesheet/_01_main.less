@@ -1,0 +1,133 @@
+@charset "utf-8";
+@import "ku";
+// @import (less) "a.css"; 导入CSS文件
+
+@fs_14:14px;
+@item_margin_right:32px;
+//列表总宽度
+@potato_width:616px;
+
+.reset();//设定初始样式
+
+.potato_main{
+	width: @potato_width;
+	.bc();
+}
+.title {
+    @height: 62px;
+    height: @height;
+    line-height: @height;
+    border-top: solid 1px #CCC;
+    margin-top: 20px;
+    position: relative;
+    margin-right: 20px;
+    h3 {
+        font: 22px/@height "微软雅黑";
+        width: 106px;
+        height: @height - 1;
+        border-top: 2px solid #FF3B31;
+        margin-top: -1px;
+        position: relative;
+        .fl();
+    }
+    &_nav {
+        @color: #BDC8CC;
+        @f14: 14px;
+        //父元素左浮动
+        float: right;
+        font-size: @f14;
+        li {
+            //li右浮动，实现紧贴效果
+            float: left;
+            list-style-type: none;
+            color: @color;
+        }
+        a {
+            color: @color;
+            text-decoration: none;
+            &:hover {
+                color: #CC5A3F;
+            }
+        }
+        span {
+            margin: 0 20px;
+        }
+    }
+}
+
+.content{
+	//margin-right为负值，使得后面的块级元素跟上来
+	margin-right: -@item_margin_right;
+	.clearfix();
+}
+
+//内容
+.item {
+    @w: 130px;
+    @h: 164px;
+    @img_h: 78px;
+
+    width: @w;
+    height: @h;
+    float: left;
+    display: inline;//设置为inline后可以拥有行内元素并排排列的性质
+    margin-right: @item_margin_right;
+    &_img {
+        height: @img_h;
+        position: relative;
+        margin-bottom: 5px;
+        img {
+            width: @w;
+            height: @img_h;
+            //将img设置为块级元素
+            display: block;
+        }
+        span{
+        	height: 18px;
+        	width: 35px;
+        	line-height: 18px;
+        	font-size: @fs_14 - 2;
+        	position: absolute;
+        	right: 0;
+        	bottom: 0;
+        	text-indent: 9px;
+        	color: #FFF;
+        	//因为设置了背景图片，所以要设置背景图片的位置和展现效果
+        	background-repeat: no-repeat;
+        	background-position: 0 0;
+        }
+        .cq{
+        	background-image: url(../img/cq.png);
+        }
+
+        .gq{
+        	background-image: url(../img/gq.png);
+        }
+    }
+
+    &_list{
+    	font-size: @fs_14 - 2px;
+    	line-height: 22px;
+    	a{
+    		color: #666;
+    		&:hover{
+    			color: red;
+    		}
+    	}
+    	.userName,.play,.mess{
+    		padding-left: 17px;//为了让背景图片能显示出来，内部的左边空出空间来
+    		background-position: left center;
+    		background-repeat: no-repeat;
+    	}
+    	.userName{
+    		background-image: url(../img/02.jpg);
+    	}
+    	.play{
+    		background-image: url(../img/01.jpg);
+    		margin-right: 4px;
+    	}
+    	.mess{
+    		background-image: url(../img/03.jpg);
+    	}
+    }
+}

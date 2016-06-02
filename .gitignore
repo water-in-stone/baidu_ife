@@ -6,6 +6,8 @@
 
 # Package Files #
 *.jar
+*.zip
+*.rar
 *.war
 *.ear
 
@@ -30,6 +32,7 @@ hs_err_pid*
 .idea/.name
 .idea/copyright
 .idea
+psd20818
 
 
 # Sensitive or high-churn files:
