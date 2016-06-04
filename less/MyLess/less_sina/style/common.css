@@ -59,3 +59,473 @@ body {
   height: 100%;
   text-indent: -99em;
 }
+.header .search {
+  width: 945px;
+  height: 28px;
+  float: left;
+  display: inline;
+  border: solid 1px #ccc;
+  background-color: #F2F2F5;
+  margin: 9px 0;
+}
+.header .search_input {
+  height: 28px;
+  width: 902px;
+  line-height: 28px \9;
+  float: left;
+  display: inline;
+  padding: 0 8px;
+}
+.header .search_input_btn {
+  width: 17px;
+  height: 16px;
+  float: right;
+  display: inline;
+  background: url(../img/search_btn.jpg) left top no-repeat;
+  margin-top: 8px;
+  margin-right: 10px;
+}
+.headerNav {
+  height: 22px;
+  float: right;
+  display: inline;
+}
+.headerNav li {
+  float: left;
+  display: inline;
+  line-height: 14px;
+  margin-right: 31px;
+  margin-top: 16px;
+}
+.headerNav a {
+  font-family: "微软雅黑";
+  font-size: 12px;
+  color: #333333;
+  background: url(../img/icon_01.jpg) left center no-repeat;
+  padding-left: 22px;
+}
+.headerNav a:hover {
+  color: #fa7d3c;
+}
+.main {
+  width: 999px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #7fc3e2;
+  padding-top: 16px;
+  *zoom: 1;
+}
+.main:before,
+.main:after {
+  display: table;
+  content: "";
+}
+.main:after {
+  clear: both;
+}
+.leftArea {
+  float: left;
+  display: inline;
+  width: 731px;
+}
+.leftArea .left_nav {
+  width: 130px;
+  float: left;
+  display: inline;
+}
+.leftArea .left_nav ul {
+  font-family: "微软雅黑";
+  font-size: 12px;
+  line-height: 34px;
+}
+.leftArea .left_nav a {
+  color: #fff;
+  line-height: 34px;
+  display: block;
+  padding-left: 15px;
+}
+.leftArea .left_nav a:hover {
+  background-color: #98CEE7;
+}
+.leftArea .left_nav .nav_line {
+  height: 1px;
+  background-color: #98CEE7;
+  overflow: hidden;
+  margin: 12px;
+}
+.leftArea .left_nav .strong_font {
+  font-weight: bold;
+}
+.leftArea .left_content {
+  float: right;
+  display: inline;
+}
+.leftArea .left_content .releaseBox {
+  width: 601px;
+  height: 165px;
+  background-color: #fff;
+  border-radius: 3px;
+  padding-top: 16px;
+}
+.leftArea .left_content .releaseBox .releaseTop {
+  padding: 0 15px;
+  *zoom: 1;
+}
+.leftArea .left_content .releaseBox .releaseTop:before,
+.leftArea .left_content .releaseBox .releaseTop:after {
+  display: table;
+  content: "";
+}
+.leftArea .left_content .releaseBox .releaseTop:after {
+  clear: both;
+}
+.leftArea .left_content .releaseBox .releaseText {
+  font-size: 12px;
+  height: 18px;
+  width: 179px;
+  background: url(../img/new_bg.jpg) left center no-repeat;
+  text-indent: -99em;
+  float: left;
+  display: inline;
+}
+.leftArea .left_content .releaseBox .releaseLink {
+  float: right;
+  display: inline;
+  height: 18px;
+  line-height: 18px;
+}
+.leftArea .left_content .releaseBox .releaseLink a {
+  font-size: 10px;
+  font-family: "微软雅黑";
+}
+.leftArea .left_content .releaseBox .releaseLink a:hover {
+  text-decoration: underline;
+}
+.leftArea .left_content .releaseArea {
+  margin: 10px 10px;
+  border: solid 1px #98CEE7;
+  height: 80px;
+  margin-bottom: 12px;
+}
+.leftArea .left_content .releaseArea textarea {
+  padding: 2px 5px;
+  width: 100%;
+  line-height: 37px;
+  font-family: "微软雅黑";
+  font-size: 12px;
+}
+.leftArea .left_content .releaseSelect {
+  padding: 0 15px;
+  *zoom: 1;
+}
+.leftArea .left_content .releaseSelect:before,
+.leftArea .left_content .releaseSelect:after {
+  display: table;
+  content: "";
+}
+.leftArea .left_content .releaseSelect:after {
+  clear: both;
+}
+.leftArea .left_content .release_texts {
+  padding-top: 6px;
+  float: left;
+  display: inline;
+  font-family: "Microsoft Yahei", "微软雅黑";
+  font-size: 12px;
+}
+.leftArea .left_content .release_texts li {
+  float: left;
+  display: inline;
+  margin-right: 20px;
+}
+.leftArea .left_content .release_texts a {
+  height: 19px;
+  line-height: 19px;
+  color: #333333;
+  padding-left: 25px;
+  background: url('../img/bq.jpg') left center no-repeat;
+  display: inline-block;
+}
+.leftArea .left_content .release_texts a:hover {
+  color: #fa7d3c;
+}
+.leftArea .left_content .release_btns {
+  float: right;
+  display: inline;
+}
+.leftArea .left_content .release_btns .u_release_btn {
+  width: 82px;
+  height: 30px;
+  background-color: #FFC09F;
+  border-radius: 2px;
+  font-family: "Microsoft Yahei", "微软雅黑";
+  font-size: 14px;
+  color: #FFF;
+}
+.leftArea .left_content .release_btns .u_btn_active {
+  background-color: #FF8140;
+}
+.leftArea .left_content .screeningBox {
+  background: #FFF;
+  margin-top: 20px;
+  width: 601px;
+  height: 40px;
+  border-radius: 2px;
+}
+.leftArea .left_content .screeningBox .screeningCont {
+  padding: 10px 14px 0px 14px;
+}
+.leftArea .left_content .screeningBox .screeningCont li {
+  float: left;
+  display: inline;
+  font-family: "微软雅黑";
+  font-size: 14px;
+  margin-right: 28px;
+  position: relative;
+}
+.leftArea .left_content .screeningBox .screeningCont li i {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  margin-left: -6px;
+  border-style: solid dashed dashed dashed;
+  border-color: #7fc3e2 transparent transparent transparent;
+  width: 0;
+  height: 0;
+  border-width: 6px;
+  border-color: transparent transparent #7fc3e2 transparent;
+  border-style: dashed dashed solid dashed;
+  width: 0px;
+  height: 0px;
+  overflow: hidden;
+}
+.leftArea .left_content .item_cont {
+  width: 578px;
+  height: 85px;
+  background: #FFF;
+  border-radius: 2px;
+  border-bottom: solid 1px #CCCCCC;
+  margin-top: 9px;
+  position: relative;
+  padding: 10px 10px;
+  font-family: "微软雅黑";
+  font-size: 14px;
+  *zoom: 1;
+}
+.leftArea .left_content .item_cont:before,
+.leftArea .left_content .item_cont:after {
+  display: table;
+  content: "";
+}
+.leftArea .left_content .item_cont:after {
+  clear: both;
+}
+.leftArea .left_content .item_cont dt {
+  float: left;
+  display: inline;
+}
+.leftArea .left_content .item_cont dt img {
+  width: 50px;
+  height: 50px;
+  display: block;
+  border-radius: 50%;
+}
+.leftArea .left_content .item_cont dd {
+  padding-left: 70px;
+}
+.leftArea .left_content .item_cont dd a {
+  color: #32a2d5;
+}
+.leftArea .left_content .item_cont dd a:hover {
+  color: #fa7d3c;
+}
+.leftArea .left_content .item_cont dd .v {
+  vertical-align: middle;
+  width: 14px;
+  height: 12px;
+  background: url('../img/v.jpg') left top no-repeat;
+  display: inline-block;
+  margin-left: 4px;
+}
+.leftArea .left_content .item_cont dd h3 {
+  margin-bottom: 10px;
+}
+.leftArea .left_content .item_cont dd .down_btn {
+  width: 12px;
+  height: 8px;
+  overflow: hidden;
+  background: url('../img/down_icon.jpg') left top no-repeat;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.leftArea .left_content .item_option {
+  font-family: "微软雅黑";
+  font-size: 14px;
+  background: #FFF;
+  width: 598px;
+  height: 38px;
+  padding: 10px 0 0 0;
+}
+.leftArea .left_content .item_option li {
+  width: 25%;
+  height: 20px;
+  text-align: center;
+  float: left;
+  display: inline;
+  border-right: solid 1px #ccc;
+  margin-right: -1px;
+}
+.leftArea .left_content .item_option a {
+  color: #333333;
+}
+.leftArea .left_content .item_option a:hover {
+  color: #32a2d5;
+}
+.rightArea {
+  float: right;
+  display: inline;
+  width: 229px;
+  margin: 0 10px 10px 0;
+  font-family: "微软雅黑";
+  font-size: 14px;
+  *zoom: 1;
+}
+.rightArea:before,
+.rightArea:after {
+  display: table;
+  content: "";
+}
+.rightArea:after {
+  clear: both;
+}
+.rightArea .userCard {
+  background: #FFF;
+  height: 200px;
+}
+.rightArea .userCardBg {
+  background-color: #FA7D3C;
+  border: 1px solid #CCCCCC;
+  border-radius: 2px;
+  height: 70px;
+}
+.rightArea .userHead {
+  margin-top: -42px;
+  text-align: center;
+}
+.rightArea .userHead img {
+  border: 4px solid #CCC;
+  border-radius: 50%;
+  height: 66px;
+  width: 66px;
+}
+.rightArea .userLinks {
+  padding: 10px 20px;
+}
+.rightArea .userLinks li {
+  float: left;
+  display: inline;
+  border-right: 2px solid #CCC;
+  text-align: center;
+  width: 60px;
+}
+.rightArea .userLinks li strong {
+  display: block;
+}
+.rightArea .userLinks li a {
+  color: #333333;
+}
+.rightArea .userLinks li a:hover {
+  color: #32a2d5;
+}
+.rightArea .userLinks .last {
+  border-right: none;
+}
+.rightArea .hotBox {
+  background-color: #fff;
+  margin-top: 10px;
+}
+.rightArea .hotBox .hot_title {
+  border-bottom: 1px solid #CCC;
+  *zoom: 1;
+  padding: 10px 10px;
+}
+.rightArea .hotBox .hot_title:before,
+.rightArea .hotBox .hot_title:after {
+  display: table;
+  content: "";
+}
+.rightArea .hotBox .hot_title:after {
+  clear: both;
+}
+.rightArea .hotBox .hot_title h3 {
+  float: left;
+  display: inline;
+}
+.rightArea .hotBox .hot_title a {
+  color: #333333;
+  float: right;
+  display: inline;
+}
+.rightArea .hotBox .hot_list {
+  font-family: "Microsoft Yahei", "微软雅黑";
+  font-size: 14px;
+  padding: 12px 10px 0;
+}
+.rightArea .hotBox .hot_list a {
+  color: #333333;
+}
+.rightArea .hotBox .hot_list a:hover {
+  color: #32a2d5;
+}
+.rightArea .hotBox .hot_list li {
+  height: 30px;
+  line-height: 30px;
+  vertical-align: top;
+  overflow: hidden;
+}
+.rightArea .hotBox .hot_list a {
+  float: left;
+  display: inline;
+  width: 100px;
+  text-overflow: ellipsis;
+}
+.rightArea .hotBox .hot_list span {
+  float: right;
+  display: inline;
+}
+.rightArea .hotBox .hot_more {
+  text-align: center;
+  border-top: 1px solid #CCC;
+  line-height: 38px;
+}
+.rightArea .hotBox .hot_more a {
+  color: #333333;
+}
+.rightArea .hotBox .hot_more a:hover {
+  color: #32a2d5;
+}
+.common_border_bg {
+  background-color: #fff;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 0 1px #000000;
+  -moz-box-shadow: 0 0 1px #000000;
+  box-shadow: 0 0 1px #000000;
+}
+/*-------------------匹配模式--------------------*/
+.fragment {
+  border-style: dashed solid dashed dashed;
+  border-color: transparent #cccccc transparent transparent;
+  border-width: 5px;
+  width: 0;
+  height: 0;
+  border-width: 40px;
+  border-color: transparent transparent transparent #0000ff;
+  border-style: dashed dashed dashed solid;
+  width: 0px;
+  height: 0px;
+  overflow: hidden;
+}
+/*------------------匹配模式--------------------*/

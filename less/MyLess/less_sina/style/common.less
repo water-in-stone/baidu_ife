@@ -1,41 +1,513 @@
 @charset "utf-8";
 @import "z";
+@import "css3";
 @import "variables";
-
 .reset();
-
-body{
-	background-color: @body_bgc;
+body {
+    background-color: @body_bgc;
 }
 
 //header
-.header{
-	@h:48px;
-	@border:2px;
-	background-color: #FFF;
-	height: @h;
-	border-top: @border solid @link_color;
-	background-color: #fff;
-
-	&_content{
-		margin-left: auto;
-		margin-right: auto;
-		width: 1240px;
-		.clearfix();
-	}
-
-	.logo{
-		width: 80px;
-		height: 27px;
-		background: url(../img/logo.jpg) left top no-repeat;
-		margin: 8px 30px 13px 0;
-		//浮动
-		float: left;
-		display: inline;
-		a{
-			display: block;
-			height: 100%;
-			text-indent: -99em;
-		}
-	}
+.header {
+    @h: 48px;
+    @border: 2px;
+    background-color: #FFF;
+    height: @h;
+    border-top: @border solid @link_color;
+    background-color: #fff;
+    &_content {
+        margin-left: auto;
+        margin-right: auto;
+        width: 1240px;
+        .clearfix();
+    }
+    .logo {
+        width: 80px;
+        height: 27px;
+        background: url(../img/logo.jpg) left top no-repeat;
+        margin: 8px 30px 13px 0;
+        //左浮动
+        float: left;
+        display: inline;
+        a {
+            display: block;
+            height: 100%;
+            text-indent: -99em;
+        }
+    }
+    .search {
+        @search_h: 28px;
+        @w: 945px;
+        width: @w;
+        height: @search_h;
+        float: left;
+        display: inline;
+        border: solid 1px #ccc;
+        background-color: #F2F2F5;
+        margin: (@h - @search_h - 2)/2 0;
+        &_input {
+            height: @search_h;
+            width: @w - 43px;
+            line-height: @search_h ~"\9"; //兼容IE
+            float: left;
+            display: inline;
+            padding: 0 8px;
+        }
+        &_input_btn {
+            width: 17px;
+            height: 16px;
+            float: right;
+            display: inline;
+            background: url(../img/search_btn.jpg) left top no-repeat;
+            margin-top: 8px;
+            margin-right: 10px;
+        }
+    }
+    &Nav {
+        @nav_h: 22px;
+        height: @nav_h;
+        float: right;
+        display: inline;
+        li {
+            float: left;
+            display: inline;
+            line-height: 14px;
+            margin-right: 31px;
+            margin-top: 16px;
+        }
+        a {
+            font-family: "微软雅黑";
+            font-size: 12px;
+            color: @link_color;
+            &:hover {
+                color: @link_hover;
+            }
+            background: url(../img/icon_01.jpg) left center no-repeat;
+            padding-left: 22px;
+        }
+    }
 }
+
+.main {
+    width: 999px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: @main_bgc;
+    padding-top: 16px;
+    //因为子元素均浮动，则父元素应该清除浮动
+    .clearfix();
+}
+
+.leftArea {
+    float: left;
+    display: inline;
+    width: @left_area_width;
+    .left_nav {
+        width: @leftNav_w;
+        float: left;
+        display: inline;
+        ul {
+            font-family: "微软雅黑";
+            font-size: 12px;
+            line-height: 34px;
+        }
+        a {
+            color: #fff;
+            line-height: 34px; //另a的高度为此行的行高，便于突出白色背景的效果
+            display: block; //因为<a>是行内元素，则可以通过将其转换为块级元素来表示背景色的变化
+            padding-left: 15px;
+            &:hover {
+                background-color: #98CEE7; //改变背景色为偏白色
+            }
+        }
+        .nav_line {
+            height: 1px;
+            background-color: #98CEE7;
+            overflow: hidden; //处理当元素溢出时的表现
+            margin: 12px;
+        }
+        .strong_font {
+            font-weight: bold;
+        }
+    }
+    .left_content {
+        float: right;
+        display: inline;
+        //发布框
+        .releaseBox {
+            @releaseBox_h: 165px;
+            width: @left_area_width - @leftNav_w;
+            height: @releaseBox_h;
+            background-color: #fff;
+            border-radius: 3px;
+            padding-top: 16px;
+            //对于两边有空白的情况，可在父元素中设置padding
+            .releaseTop {
+                padding: 0 15px;
+                .clearfix();
+            }
+            .releaseText {
+                @text_w: 179px;
+                font-size: 12px;
+                height: 18px;
+                width: @text_w;
+                background: url(../img/new_bg.jpg) left center no-repeat;
+                text-indent: -99em;
+                float: left;
+                display: inline;
+            }
+            .releaseLink {
+                float: right;
+                display: inline;
+                height: 18px;
+                line-height: 18px;
+                a {
+                    font-size: 10px;
+                    font-family: "微软雅黑";
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        //内容框
+        .releaseArea {
+            @releaseArea_h: 80px;
+            margin: 10px 10px;
+            border: solid 1px #98CEE7;
+            height: @releaseArea_h;
+            margin-bottom: 12px;
+            textarea {
+                padding: 2px 5px;
+                width: 100%;
+                line-height: 37px;
+                font-family: "微软雅黑";
+                font-size: 12px;
+            }
+        }
+        .releaseSelect {
+            padding: 0 15px;
+            .clearfix();
+        }
+        .release_texts {
+            padding-top: 6px;
+            .fl();
+            .font-fm();
+            .font-s12();
+            li {
+                .fl();
+                margin-right: 20px;
+            }
+            a {
+                height: 19px;
+                line-height: 19px;
+                color: @link_color;
+                padding-left: 25px; //算上了间距
+                background: url('../img/bq.jpg') left center no-repeat;
+                display: inline-block;
+                &:hover {
+                    color: @link_hover;
+                }
+            }
+        }
+        //发布按钮
+        .release_btns {
+            float: right;
+            display: inline;
+            .u_release_btn {
+                width: 82px;
+                height: 30px;
+                background-color: #FFC09F;
+                border-radius: 2px;
+                .font-fm();
+                .font-s14();
+                color: #FFF;
+            }
+            .u_btn_active {
+                background-color: #FF8140;
+            }
+        }
+        //筛选
+        .screeningBox {
+            background: #FFF;
+            margin-top: 20px;
+            width: @left_area_width - @leftNav_w;
+            height: 40px;
+            border-radius: 2px;
+            .screeningCont {
+                padding: 10px 14px 0px 14px;
+                li {
+                    float: left;
+                    display: inline;
+                    font-family: "微软雅黑";
+                    font-size: 14px;
+                    margin-right: 28px;
+                    position: relative;
+                    i {
+                        position: absolute;
+                        left: 50%;
+                        top: 100%;
+                        margin-left: -6px;
+                        .triangle(top,
+                        6px,
+                        @main_bgc); //使用小三角
+                    }
+                }
+            }
+        }
+        //单条微博
+        .item_cont {
+            @w: 578px;
+            @h: 85px;
+            width: @w;
+            height: @h;
+            background: #FFF;
+            border-radius: 2px;
+            border-bottom: solid 1px #CCCCCC; //仅使用一条线即可
+            margin-top: 9px;
+            position: relative;
+            padding: 10px 10px;
+            font-family: "微软雅黑";
+            font-size: 14px;
+            .clearfix();
+            dt {
+                float: left;
+                display: inline;
+                img {
+                    width: 50px;
+                    height: 50px;
+                    display: block;
+                    border-radius: 50%; //圆形图片
+                }
+            }
+            dd {
+                padding-left: 70px;
+                a {
+                    color: @link_color_blue;
+                    &:hover {
+                        color: @link_hover;
+                    }
+                }
+                .v {
+                    vertical-align: middle;
+                    width: 14px;
+                    height: 12px;
+                    background: url('../img/v.jpg') left top no-repeat;
+                    .d-ib();
+                    margin-left: 4px;
+                }
+                h3 {
+                    margin-bottom: 10px;
+                }
+                .down_btn {
+                    width: 12px;
+                    height: 8px;
+                    overflow: hidden;
+                    background: url('../img/down_icon.jpg') left top no-repeat;
+                    position: absolute;
+                    right: 10px;
+                    top: 10px;
+                }
+            }
+        }
+        .item_option {
+            font-family: "微软雅黑";
+            font-size: 14px;
+            background: #FFF;
+            @ul_h: 38px;
+            @li_h: 22px;
+            @w: 598px;
+            width: @w;
+            height: @ul_h;
+            padding: 10px 0 0 0;
+            li {
+                width: 25%;
+                height: 20px;
+                text-align: center;
+                float: left;
+                display: inline;
+                border-right: solid 1px #ccc;
+                margin-right: -1px;
+            }
+            a {
+                color: @link_color;
+                &:hover {
+                    color: @link_color_blue;
+                }
+            }
+        }
+    }
+}
+
+.rightArea {
+    float: right;
+    display: inline;
+    width: @right_area_width;
+    margin: 0 10px 10px 0;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    .clearfix();
+    .userCard {
+        @h: 200px;
+        background: #FFF;
+        height: @h;
+    }
+    .userCardBg {
+        background-color: #FA7D3C;
+        border: 1px solid #CCCCCC;
+        border-radius: 2px;
+        height: 70px;
+    }
+    .userHead {
+        margin-top: -42px;
+        text-align: center;
+        img {
+            border: 4px solid #CCC;
+            border-radius: 50%;
+            height: 66px;
+            width: 66px;
+        }
+    }
+    .userLinks {
+        padding: 10px 20px;
+        li {
+            float: left;
+            display: inline;
+            border-right: 2px solid #CCC;
+            text-align: center;
+            width: 60px;
+            strong {
+                display: block;
+            }
+            a {
+                color: @normal_color;
+                &:hover {
+                    color: @link_color_blue;
+                }
+            }
+        }
+        .last {
+            border-right: none;
+        }
+    }
+    .hotBox {
+        background-color: #fff;
+        margin-top: 10px;
+        .hot_title {
+            border-bottom: 1px solid #CCC;
+            .clearfix();
+            padding: 10px 10px;
+            h3 {
+                float: left;
+                display: inline;
+            }
+            a {
+                color: @normal_color;
+                float: right;
+                display: inline;
+            }
+        }
+        .hot_list {
+            .font-fm();
+            .font-s14();
+            padding: 12px 10px 0;
+            .link();
+            li{
+                height: 30px;
+                line-height: 30px;
+                vertical-align: top;
+                overflow: hidden;//有了这个才能实现多出来的字用省略号显示
+            }
+            a {
+            	float: left;
+            	display: inline;
+            	width: 100px;//令宽度超过父元素，触发overflow和ellipsis
+                text-overflow: ellipsis;
+            }
+            span{
+                float: right;
+            	display: inline;
+            }
+        }
+        .hot_more{
+        	text-align: center;
+        	.link();
+        	border-top: 1px solid #CCC;
+        	line-height: 38px;
+        }
+    }
+}
+
+//设置超链接的颜色的函数
+.link(){
+    a{
+        color:@link_color;
+        &:hover{
+            color:@link_color_blue;
+        }
+    }
+}
+
+//共有背景和圆角
+.common_border_bg {
+    background-color: #fff;
+    .border-radius(@border_radius);
+    .box-shadow(0 0 1px rgba(0,
+    0,
+    0,
+    7));
+}
+
+
+/*-------------------匹配模式--------------------*/
+
+.triangle(top,
+@width: 40px,
+@color: blue) {
+    border-width: @width;
+    border-color: transparent transparent @color transparent;
+    //dashed 也是用来解决IE中三角形可能存在的边框问题
+    border-style: dashed dashed solid dashed;
+}
+
+.triangle(right,
+@width: 40px,
+@color: blue) {
+    border-width: @width;
+    border-color: transparent transparent transparent @color;
+    border-style: dashed dashed dashed solid;
+}
+
+.triangle(bottom,
+@width: 40px,
+@color: blue) {
+    border-width: @width;
+    border-color: @color transparent transparent transparent;
+    border-style: solid dashed dashed dashed;
+}
+
+.triangle(left,
+@width: 40px,
+@color: blue) {
+    border-width: @width;
+    border-color: transparent @color transparent transparent;
+    border-style: dashed solid dashed dashed;
+}
+
+//对.triangle添加默认参数
+.triangle(@_,
+@width: 40px,
+@color: blue) {
+    width: 0px;
+    height: 0px;
+    //解决IE6下的最小高度的问题
+    overflow: hidden;
+}
+
+//使用定义好的triangle
+.fragment {
+    .triangle(right);
+}
+
+
+/*------------------匹配模式--------------------*/
