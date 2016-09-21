@@ -24,7 +24,7 @@ a {
   text-decoration: none;
 }
 body {
-  background-color: #99d6f3;
+  background-color: #99D6F3;
 }
 .header {
   background-color: #FFF;
@@ -105,13 +105,13 @@ body {
   padding-left: 22px;
 }
 .headerNav a:hover {
-  color: #fa7d3c;
+  color: #FA7D3C;
 }
 .main {
   width: 999px;
   margin-left: auto;
   margin-right: auto;
-  background-color: #7fc3e2;
+  background-color: #7FC3E2;
   padding-top: 16px;
   *zoom: 1;
 }
@@ -247,7 +247,7 @@ body {
   display: inline-block;
 }
 .leftArea .left_content .release_texts a:hover {
-  color: #fa7d3c;
+  color: #FA7D3C;
 }
 .leftArea .left_content .release_btns {
   float: right;
@@ -289,11 +289,11 @@ body {
   top: 100%;
   margin-left: -6px;
   border-style: solid dashed dashed dashed;
-  border-color: #7fc3e2 transparent transparent transparent;
+  border-color: #7FC3E2 transparent transparent transparent;
   width: 0;
   height: 0;
   border-width: 6px;
-  border-color: transparent transparent #7fc3e2 transparent;
+  border-color: transparent transparent #7FC3E2 transparent;
   border-style: dashed dashed solid dashed;
   width: 0px;
   height: 0px;
@@ -334,10 +334,10 @@ body {
   padding-left: 70px;
 }
 .leftArea .left_content .item_cont dd a {
-  color: #32a2d5;
+  color: #32A2D5;
 }
 .leftArea .left_content .item_cont dd a:hover {
-  color: #fa7d3c;
+  color: #FA7D3C;
 }
 .leftArea .left_content .item_cont dd .v {
   vertical-align: middle;
@@ -380,7 +380,7 @@ body {
   color: #333333;
 }
 .leftArea .left_content .item_option a:hover {
-  color: #32a2d5;
+  color: #32A2D5;
 }
 .rightArea {
   float: right;
@@ -436,7 +436,7 @@ body {
   color: #333333;
 }
 .rightArea .userLinks li a:hover {
-  color: #32a2d5;
+  color: #32A2D5;
 }
 .rightArea .userLinks .last {
   border-right: none;
@@ -476,7 +476,7 @@ body {
   color: #333333;
 }
 .rightArea .hotBox .hot_list a:hover {
-  color: #32a2d5;
+  color: #32A2D5;
 }
 .rightArea .hotBox .hot_list li {
   height: 30px;
@@ -503,7 +503,7 @@ body {
   color: #333333;
 }
 .rightArea .hotBox .hot_more a:hover {
-  color: #32a2d5;
+  color: #32A2D5;
 }
 .common_border_bg {
   background-color: #fff;
@@ -517,12 +517,12 @@ body {
 /*-------------------匹配模式--------------------*/
 .fragment {
   border-style: dashed solid dashed dashed;
-  border-color: transparent #cccccc transparent transparent;
+  border-color: transparent #ccc transparent transparent;
   border-width: 5px;
   width: 0;
   height: 0;
   border-width: 40px;
-  border-color: transparent transparent transparent #0000ff;
+  border-color: transparent transparent transparent blue;
   border-style: dashed dashed dashed solid;
   width: 0px;
   height: 0px;

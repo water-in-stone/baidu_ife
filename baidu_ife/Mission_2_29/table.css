@@ -1,0 +1,21 @@
+* {
+    font-family: "Microsoft YaHei"
+}
+
+input {
+    border : 1px solid grey;
+    border-radius: 2px;
+}
+
+input:after {
+    content:"必填，长度为4-16字符";
+    color: red;
+}
+
+
+/*
+#inputContent:after{
+	content"必填，长度为4-16字符";
+	color: red;
+}
+*/
