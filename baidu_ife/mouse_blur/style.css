@@ -1,0 +1,127 @@
+.container {
+    margin: 30px auto;
+    width: 400px;
+    height: 225px;
+    position: relative;
+}
+
+.container:hover .img {
+    filter: blur(2px);
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+    /*改变盒模型，则总的宽度为400px*/
+    -moz-box-sizing: border-box;
+}
+
+.box .content {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    visibility: hidden;
+    box-shadow: 0 0 30px 20px rgba(0, 0, 0, .46);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, .26);
+    /*将.content的:before和:after作为边框后，类似于一个中间是透明玻璃的相框，
+    这会使得这个相框下文字上面无法被直接点击，用flex进行自动布局后可以解决这个问题*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+
+/*对应边框的两条垂直的边，且初始位置为中点，且内容为空，只留下左右的border*/
+
+.box .content:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    height: 0;
+    opacity: 0;
+    border: 2px solid #f8bfbf;
+    border-width: 0 2px;
+    /**/
+    box-sizing: border-box;
+    transition: all 1s;
+}
+
+
+/*hover时令其高度复原，且top为0，达到一种延伸的效果*/
+
+.container:hover .content:before {
+    opacity: 1;
+    height: 100%;
+    top: 0;
+}
+
+.box .content:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    opacity: 0;
+    border: 2px solid #f8bfbf;
+    border-width: 2px 0;
+    box-sizing: border-box;
+    transition: all 1s;
+}
+
+.container:hover .content:after {
+    opacity: 1;
+    width: 100%;
+    left: 0;
+}
+
+.content .title {
+    margin: 0 0 50px 0;
+    padding-top: 30px;
+    visibility: hidden;
+}
+
+.content .name {
+    visibility: hidden;
+    z-index: 100;
+}
+
+.container:hover .content,
+.container:hover .content .name,
+.container:hover .content .title {
+    visibility: visible;
+}
+
+.title,
+.name {
+    color: transparent;
+     /*使用CSS3的渐变特性从左到右绘制图像*/
+    background-image: linear-gradient(90deg, #A84444 10%, #A86544 20%, #A89844 30%, #88A844 40%, #51A844 50%, #44A865 60%, #44A89A 70%, #4469A8 80%, #6D44A8 90%, #A8447E 100%);
+    /*裁剪背景图：使用文字作为裁剪区域向外裁剪，此时文字颜色仍覆盖背景图*/
+    -webkit-background-clip: text;
+    /*将背景图宽度拉长至两倍，之前设置background-image的两份相同的颜色组，目的是在拉长后只显示一份颜色组，另外超出的半截颜色组用来实现流光效果*/
+    background-size: 200% 100%;
+    animation: load 4s infinite linear;
+}
+
+
+/*定义好“load”动画的实际效果*/
+
+@keyframes load {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
