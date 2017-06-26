@@ -11,7 +11,7 @@ var paths = {
 var watchedBrowserify = watchify(browserify({
     basedir: '.',
     debug: true,
-    entries: ['src/main.ts'],
+    entries: ['src/main.ts','src/index.html','src/my_cropper.ts'],
     cache: {},
     packageCache: {}
 }).plugin(tsify));
