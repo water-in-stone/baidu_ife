@@ -1,0 +1,120 @@
+/* 设置最外边的3/4圆环，使用:before伪元素实现 */
+.cicle {
+    display: inline-block;
+    position: relative;
+    width: 320px;
+    height: 320px;
+}
+
+.cicle:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /*使用border-box盒模型，令宽高包括了content、padding和border，使得圆环能完整出现*/
+    box-sizing: border-box;
+    border: 16px solid #ff5aa6;
+    border-radius: 50%;   /*令其border为圆环*/
+    border-top: 16px solid transparent;    /* 有1/4圆为透明 */
+    animation: cicle-rotate 9s infinite linear;
+}
+
+@keyframes cicle-rotate {
+    0% {
+        transform: rotate(0deg)
+    }
+    50% {
+        transform: rotate(-180deg)
+    }
+    100% {
+        transform: rotate(-360deg)
+    }
+}
+
+/*
+设置左右两侧的粉红半圆底座
+ */
+.cicle>span {
+    position: absolute;
+    background: #fb8bbc;
+    width: 120px;
+    height: 240px;
+    overflow: hidden; /*非常重要，令旋转到另一侧的半圆不再显示*/
+}
+
+.cicle>.left {
+    left: 40px;
+    top: 40px;
+    /*左上和左下设置border-radius，达到半圆效果*/
+    border-top-left-radius: 999px;
+    border-bottom-left-radius: 999px;
+}
+
+.cicle>.right {
+    right: 40px;
+    top: 40px;
+    border-top-right-radius: 999px;
+    border-bottom-right-radius: 999px;
+}
+
+/* 设置旋转的两个半圆的属性 */
+.rotate {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ff298c;
+    border-radius: 999px;
+}
+
+
+/* 在原有的border-radius均为999px的基础上，对于左侧的旋转半圆，令其右侧
+的border-radius为 0，则得到半圆。对于右侧的半圆的情况可以以此类推*/
+.left > .rotate {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    animation: rotate-left 9s infinite;
+    transform-origin: 100% 50%;
+}
+
+.right > .rotate {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    animation: rotate-right 9s infinite;
+    transform-origin: 0 50%;
+}
+
+@keyframes rotate-left {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-180deg);
+    }
+    50% {
+        transform: rotate(-180deg);
+    }
+    75% {
+        transform: rotate(-360deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes rotate-right {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-180deg);
+    }
+    75% {
+        transform: rotate(-180deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
